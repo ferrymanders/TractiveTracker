@@ -4,19 +4,16 @@ import logging
 import os
 from datetime import datetime, timedelta
 
+# Settings
+API_URL         = os.getenv('TRACTIVE_API_URL', 'https://graph.tractive.com/3')
+TRACTIVE_CLIENT = os.getenv('TRACTIVE_CLIENT', '5f9be055d8912eb21a4cd7ba')
+CACHE_FILE      = os.getenv('TRACTIVE_CACHE', '/tmp/tractive.cache')
+OUTPUT_FILE     = os.getenv('TRACTIVE_OUTPUT', '/tmp/tractive.data')
 
-API_URL = "https://graph.tractive.com/3"
-X_TRACTIVE_CLIENT = "5f9be055d8912eb21a4cd7ba"
 
-CACHE_FILE = "/tmp/tractive.cache"
-OUTPUT_FILE = "/tmp/tractive.data"
-
-
-DEBUG = os.environ.get('TRACTIVE_DEBUG')
+DEBUG = os.getenv('TRACTIVE_DEBUG', 'None')
 if DEBUG == "None":
     DEBUG = False
-
-
 
 class TractiveTracker:
 
