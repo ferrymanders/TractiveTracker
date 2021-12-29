@@ -82,7 +82,7 @@ class TractiveTracker:
             print("-> Getting credentials")
 
         headers = {
-            "x-tractive-client": X_TRACTIVE_CLIENT,
+            "x-tractive-client": TRACTIVE_CLIENT,
             "content-type": "application/json;charset=UTF-8",
             "accept": "application/json, text/plain, */*",
         }
@@ -120,7 +120,7 @@ class TractiveTracker:
     # Get Trackers
     def get_trackers(self):
         headers = {
-            "x-tractive-client": X_TRACTIVE_CLIENT,
+            "x-tractive-client": TRACTIVE_CLIENT,
             "content-type": "application/json;charset=UTF-8",
             "accept": "application/json, text/plain, */*",
             "x-tractive-user": self._user_credentials["user_id"],
@@ -147,7 +147,7 @@ class TractiveTracker:
     # Get tracker data
     def get_tracker_data(self):
         headers = {
-            "x-tractive-client": X_TRACTIVE_CLIENT,
+            "x-tractive-client": TRACTIVE_CLIENT,
             "content-type": "application/json;charset=UTF-8",
             "accept": "application/json, text/plain, */*",
             "x-tractive-user": self._user_credentials["user_id"],
